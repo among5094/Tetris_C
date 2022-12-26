@@ -258,5 +258,17 @@ int main(void)
 //처음 부분
 void Init()
 {
+    CONSOLE_CURSOR_INFO cursorInfo; //커서 구조체 선언
+    cursorInfo.bVisible = 0; //커서가 보이지 않게 하기
+	cursorInfo.dwSize = 1; //커서의 굵기 지정 : 1만큼 지정해주기
+	
+    
+    SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorInfo);
+	srand(time(NULL));
 
+    //참고 링크: https://coding-factory.tistory.com/691
+    //참고 링크(간단): https://coding-factory.tistory.com/691
+
+    // +) 원하는 좌표로 커서 이동하기 (SetConsoleCursorPosition)
+    //https://coding-factory.tistory.com/690
 }
